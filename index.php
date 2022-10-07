@@ -1,5 +1,5 @@
 <?php
-
+    ini_set('display_errors', 'On');
     session_start();
     //define ('APP',__DIR__);
     //echo APP;

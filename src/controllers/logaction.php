@@ -9,14 +9,25 @@
 
     //die($dsn);
     $db=connectMysql($dsn,$dbuser,$dbpass);
-    var_dump($db);
-    $db=null;
-    var_dump($db);
-    die();
+    
     if(!empty($_POST['email'])&&!empty($_POST['password'])){
         if(isset($_POST['email']) && isset($_POST['password'])){
             $email= $_REQUEST['email'];
-            echo $email;
+            //die($email);
+            $password=$_REQUEST['password'];
+            echo"aaaaaaaaa";
+            
+            if(auth($db,$email,$password)){
+                //true
+                header('Location:?url=dashboard');
+                echo"bbbbbbb";
+            }else{
+                //false
+                header('Location:?url=login');
+                echo"cccccc";
+            }
+            
+            echo"eeeeeee";
         }
         //echo "aaaa";
     }
