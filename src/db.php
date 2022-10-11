@@ -59,3 +59,20 @@ function auth(PDO $db, string $email, string $password):bool
     }
     */
 }
+
+function regis(PDO $db, string $email, string $password):bool
+{
+    $stmt=$db->prepare("INSERT INTO USERS LIMIT 1");
+    //var_dump($stmt);
+    //$res=$stmt->execute([':email'=>$email]);
+    /*
+    if($stmt->rowCount()==1){
+        $user=$stmt->fetchAll()[0];
+        if(password_verify($password, $user->password)){
+            $_SESSION['user']=$user;
+            return true;
+        }
+    }
+    */
+    return false;
+}
